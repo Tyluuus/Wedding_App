@@ -12,10 +12,16 @@ Future<void> registerCubit(GetIt getIt) async {
   getIt
     ..registerFactory(() => BasePageCubit())
     ..registerFactory(() => EntryCubit())
-    ..registerFactory(() => HomeCubit())
+    ..registerFactory(() => HomeCubit(
+          getIt(),
+        ))
     ..registerFactory(() => AppCubit())
-    ..registerFactory(() => ConfirmationCubit())
+    ..registerFactory(() => ConfirmationCubit(
+          getIt(),
+        ))
     ..registerFactory(() => ContactCubit())
-    ..registerFactory(() => InfoCubit())
+    ..registerFactory(() => InfoCubit(
+          getIt(),
+        ))
     ..registerFactory(() => LocationCubit());
 }

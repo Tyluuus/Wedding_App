@@ -19,18 +19,21 @@ mixin _$ConfirmationState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
+    required TResult Function() dump,
     required TResult Function() loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
+    TResult? Function()? dump,
     TResult? Function()? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
+    TResult Function()? dump,
     TResult Function()? loaded,
     required TResult orElse(),
   }) =>
@@ -38,18 +41,21 @@ mixin _$ConfirmationState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ConfirmationStateIdle value) idle,
+    required TResult Function(ConfirmationStateDump value) dump,
     required TResult Function(ConfirmationStateLoaded value) loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ConfirmationStateIdle value)? idle,
+    TResult? Function(ConfirmationStateDump value)? dump,
     TResult? Function(ConfirmationStateLoaded value)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ConfirmationStateIdle value)? idle,
+    TResult Function(ConfirmationStateDump value)? dump,
     TResult Function(ConfirmationStateLoaded value)? loaded,
     required TResult orElse(),
   }) =>
@@ -113,6 +119,7 @@ class _$ConfirmationStateIdle implements ConfirmationStateIdle {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
+    required TResult Function() dump,
     required TResult Function() loaded,
   }) {
     return idle();
@@ -122,6 +129,7 @@ class _$ConfirmationStateIdle implements ConfirmationStateIdle {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
+    TResult? Function()? dump,
     TResult? Function()? loaded,
   }) {
     return idle?.call();
@@ -131,6 +139,7 @@ class _$ConfirmationStateIdle implements ConfirmationStateIdle {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
+    TResult Function()? dump,
     TResult Function()? loaded,
     required TResult orElse(),
   }) {
@@ -144,6 +153,7 @@ class _$ConfirmationStateIdle implements ConfirmationStateIdle {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ConfirmationStateIdle value) idle,
+    required TResult Function(ConfirmationStateDump value) dump,
     required TResult Function(ConfirmationStateLoaded value) loaded,
   }) {
     return idle(this);
@@ -153,6 +163,7 @@ class _$ConfirmationStateIdle implements ConfirmationStateIdle {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ConfirmationStateIdle value)? idle,
+    TResult? Function(ConfirmationStateDump value)? dump,
     TResult? Function(ConfirmationStateLoaded value)? loaded,
   }) {
     return idle?.call(this);
@@ -162,6 +173,7 @@ class _$ConfirmationStateIdle implements ConfirmationStateIdle {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ConfirmationStateIdle value)? idle,
+    TResult Function(ConfirmationStateDump value)? dump,
     TResult Function(ConfirmationStateLoaded value)? loaded,
     required TResult orElse(),
   }) {
@@ -174,6 +186,114 @@ class _$ConfirmationStateIdle implements ConfirmationStateIdle {
 
 abstract class ConfirmationStateIdle implements ConfirmationState {
   const factory ConfirmationStateIdle() = _$ConfirmationStateIdle;
+}
+
+/// @nodoc
+abstract class _$$ConfirmationStateDumpCopyWith<$Res> {
+  factory _$$ConfirmationStateDumpCopyWith(_$ConfirmationStateDump value,
+          $Res Function(_$ConfirmationStateDump) then) =
+      __$$ConfirmationStateDumpCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ConfirmationStateDumpCopyWithImpl<$Res>
+    extends _$ConfirmationStateCopyWithImpl<$Res, _$ConfirmationStateDump>
+    implements _$$ConfirmationStateDumpCopyWith<$Res> {
+  __$$ConfirmationStateDumpCopyWithImpl(_$ConfirmationStateDump _value,
+      $Res Function(_$ConfirmationStateDump) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ConfirmationStateDump implements ConfirmationStateDump {
+  const _$ConfirmationStateDump();
+
+  @override
+  String toString() {
+    return 'ConfirmationState.dump()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ConfirmationStateDump);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() dump,
+    required TResult Function() loaded,
+  }) {
+    return dump();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? dump,
+    TResult? Function()? loaded,
+  }) {
+    return dump?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? dump,
+    TResult Function()? loaded,
+    required TResult orElse(),
+  }) {
+    if (dump != null) {
+      return dump();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ConfirmationStateIdle value) idle,
+    required TResult Function(ConfirmationStateDump value) dump,
+    required TResult Function(ConfirmationStateLoaded value) loaded,
+  }) {
+    return dump(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ConfirmationStateIdle value)? idle,
+    TResult? Function(ConfirmationStateDump value)? dump,
+    TResult? Function(ConfirmationStateLoaded value)? loaded,
+  }) {
+    return dump?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ConfirmationStateIdle value)? idle,
+    TResult Function(ConfirmationStateDump value)? dump,
+    TResult Function(ConfirmationStateLoaded value)? loaded,
+    required TResult orElse(),
+  }) {
+    if (dump != null) {
+      return dump(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ConfirmationStateDump implements ConfirmationState {
+  const factory ConfirmationStateDump() = _$ConfirmationStateDump;
 }
 
 /// @nodoc
@@ -216,6 +336,7 @@ class _$ConfirmationStateLoaded implements ConfirmationStateLoaded {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
+    required TResult Function() dump,
     required TResult Function() loaded,
   }) {
     return loaded();
@@ -225,6 +346,7 @@ class _$ConfirmationStateLoaded implements ConfirmationStateLoaded {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
+    TResult? Function()? dump,
     TResult? Function()? loaded,
   }) {
     return loaded?.call();
@@ -234,6 +356,7 @@ class _$ConfirmationStateLoaded implements ConfirmationStateLoaded {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
+    TResult Function()? dump,
     TResult Function()? loaded,
     required TResult orElse(),
   }) {
@@ -247,6 +370,7 @@ class _$ConfirmationStateLoaded implements ConfirmationStateLoaded {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ConfirmationStateIdle value) idle,
+    required TResult Function(ConfirmationStateDump value) dump,
     required TResult Function(ConfirmationStateLoaded value) loaded,
   }) {
     return loaded(this);
@@ -256,6 +380,7 @@ class _$ConfirmationStateLoaded implements ConfirmationStateLoaded {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ConfirmationStateIdle value)? idle,
+    TResult? Function(ConfirmationStateDump value)? dump,
     TResult? Function(ConfirmationStateLoaded value)? loaded,
   }) {
     return loaded?.call(this);
@@ -265,6 +390,7 @@ class _$ConfirmationStateLoaded implements ConfirmationStateLoaded {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ConfirmationStateIdle value)? idle,
+    TResult Function(ConfirmationStateDump value)? dump,
     TResult Function(ConfirmationStateLoaded value)? loaded,
     required TResult orElse(),
   }) {

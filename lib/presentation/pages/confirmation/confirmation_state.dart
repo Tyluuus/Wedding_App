@@ -4,5 +4,7 @@ part of 'confirmation_cubit.dart';
 class ConfirmationState with _$ConfirmationState {
   const factory ConfirmationState.idle() = ConfirmationStateIdle;
 
+  const factory ConfirmationState.dump() = ConfirmationStateDump;
+
   const factory ConfirmationState.loaded() = ConfirmationStateLoaded;
 }

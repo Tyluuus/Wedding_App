@@ -32,5 +32,8 @@
   "nav_bar_location": "Location",
   "nav_bar_confirm": "Confirm",
   "nav_bar_info": "Info",
-  "nav_bar_contact": "Contact"
+  "nav_bar_contact": "Contact",
+  "timeout_title": "Server communication error",
+  "confirmation_done_title": "You have already sent confirmation.",
+  "confirmation_done_text": "If anything changed please contact with us. All contact informations you will find under contact tab."
 }

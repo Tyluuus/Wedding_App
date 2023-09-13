@@ -28,12 +28,14 @@ class ConfirmationPage extends BasePage {
     final state = useCubitBuilder(cubit, buildWhen: _buildWhen);
 
     return state.maybeWhen(
-      loaded: () => ConfirmationLoadedWidget(),
+      loaded: () => ConfirmationLoadedWidget(
+        cubit: cubit,
+      ),
       orElse: () => Container(),
     );
   }
 
-  bool _buildWhen(ConfirmationState state) => state is ConfirmationStateLoaded || state is ConfirmationStateIdle;
+  bool _buildWhen(ConfirmationState state) => state is ConfirmationStateLoaded || state is ConfirmationStateIdle || state is ConfirmationStateDump;
 
   bool _listenWhen(ConfirmationState state) => state is! ConfirmationStateIdle;
 

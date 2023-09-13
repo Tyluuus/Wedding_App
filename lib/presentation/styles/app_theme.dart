@@ -43,8 +43,12 @@ class AppTheme {
           fontSize: 32,
           fontWeight: FontWeight.w400,
         ),
-        bodyLarge: GoogleFonts.alexBrush(
+        titleSmall: GoogleFonts.alexBrush(
           fontSize: 22,
+          fontWeight: FontWeight.w400,
+        ),
+        bodyLarge: GoogleFonts.signika(
+          fontSize: 28,
           fontWeight: FontWeight.w400,
         ),
         bodyMedium: GoogleFonts.signika(

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:wedding_app/domain/review/review_model.dart';
 import 'package:wedding_app/extensions/int_extension.dart';
 import 'package:wedding_app/presentation/pages/home/home_cubit.dart';
-import 'package:wedding_app/presentation/pages/home/models/review_model.dart';
 import 'package:wedding_app/presentation/pages/home/widgets/review_widget.dart';
 import 'package:wedding_app/presentation/styles/dimensions.dart';
+import 'package:wedding_app/presentation/widgets/spinner_widget.dart';
 
 class HomeLoadedWidgetContent extends HookWidget {
   final HomeCubit cubit;
@@ -19,6 +20,14 @@ class HomeLoadedWidgetContent extends HookWidget {
   Widget build(BuildContext context) {
     final counter = useState(const Duration());
     cubit.countDown(counter);
+
+    final reviewsStream = useStream(cubit.reviewsStream);
+    final isLoading = useState(true);
+
+    if (reviewsStream.hasData) {
+      isLoading.value = false;
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: Center(
@@ -59,25 +68,7 @@ class HomeLoadedWidgetContent extends HookWidget {
                 child: Text(
                   AppLocalizations.of(context)!.about_us_text,
                   textAlign: TextAlign.justify,
-                  style: Theme.of(context).primaryTextTheme.bodyLarge,
-                ),
-              ),
-              Padding(
-                padding: kDefaultSmallVerticalPadding,
-                child: Text(
-                  AppLocalizations.of(context)!.reviews_label,
-                  style: Theme.of(context).primaryTextTheme.titleMedium,
-                ),
-              ),
-              Padding(
-                padding: kDefaultSmallVerticalPadding,
-                child: ReviewWidget(
-                  iconOnLeft: true,
-                  review: ReviewModel(
-                    starsNumber: 3,
-                    reviewText: 'Zajebiste ziomki',
-                    author: 'Piotrek z Ciechanowa',
-                  ),
+                  style: Theme.of(context).primaryTextTheme.titleSmall,
                 ),
               ),
               Padding(
@@ -108,7 +99,7 @@ class HomeLoadedWidgetContent extends HookWidget {
                 ],
               ),
               Padding(
-                padding: kDefaultSmallVerticalPadding,
+                padding: kDefaultVerticalPadding,
                 child: InkWell(
                   onTap: () {
                     cubit.createCalendarEvent();
@@ -140,6 +131,35 @@ class HomeLoadedWidgetContent extends HookWidget {
                   ),
                 ),
               ),
+              SizedBox(
+                height: kPageSidePaddingValue,
+              ),
+              isLoading.value
+                  ? const SpinnerWidget()
+                  : reviewsStream.data!.isNotEmpty
+                      ? Column(
+                          children: [
+                            Padding(
+                              padding: kDefaultSmallVerticalPadding,
+                              child: Text(
+                                AppLocalizations.of(context)!.reviews_label,
+                                style: Theme.of(context).primaryTextTheme.titleMedium,
+                              ),
+                            ),
+                            Padding(
+                              padding: kDefaultSmallVerticalPadding,
+                              child: ReviewWidget(
+                                iconOnLeft: true,
+                                review: ReviewModel(
+                                  starsNumber: 3,
+                                  reviewText: 'Zajebiste ziomki',
+                                  author: 'Piotrek z Ciechanowa',
+                                ),
+                              ),
+                            ),
+                          ],
+                        )
+                      : Container(),
               const SizedBox(
                 height: kDefaultBottomMarginValue,
               ),

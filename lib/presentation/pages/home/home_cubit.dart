@@ -3,6 +3,9 @@ import 'dart:async';
 import 'package:add_2_calendar/add_2_calendar.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:rxdart/rxdart.dart';
+import 'package:wedding_app/domain/review/review_model.dart';
+import 'package:wedding_app/domain/review/review_service.dart';
 import 'package:wedding_app/presentation/pages/base_cubit.dart';
 
 part 'home_cubit.freezed.dart';
@@ -10,11 +13,30 @@ part 'home_state.dart';
 
 class HomeCubit extends BaseCubit<HomeState> {
   bool isCounterActive = false;
+  final ReviewService _reviewService;
 
-  HomeCubit() : super(const HomeState.idle());
+  HomeCubit(
+    this._reviewService,
+  ) : super(const HomeState.idle());
+
+  final BehaviorSubject<List<ReviewModel>?> _reviewsSubject = BehaviorSubject();
+
+  Stream<List<ReviewModel>?> get reviewsStream => _reviewsSubject.stream;
 
   Future<void> init() async {
     emit(const HomeState.loaded());
+
+    await _loadData();
+  }
+
+  Future<void> _loadData() async {
+    //TODO: Api call
+    final List<ReviewModel>? reviewsList = [];
+    if (reviewsList == null) {
+      return;
+    }
+
+    if (!_reviewsSubject.isClosed) _reviewsSubject.add(reviewsList);
   }
 
   Future<void> countDown(ValueNotifier<Duration> counter) async {
@@ -46,5 +68,11 @@ class HomeCubit extends BaseCubit<HomeState> {
 
   Future<void> stopCounter() async {
     isCounterActive = false;
+  }
+
+  @override
+  Future<void> close() {
+    _reviewsSubject.close();
+    return super.close();
   }
 }

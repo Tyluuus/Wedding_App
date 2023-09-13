@@ -32,5 +32,8 @@
   "nav_bar_location": "Lokalizacje",
   "nav_bar_confirm": "Potwierdzenie",
   "nav_bar_info": "Informacje",
-  "nav_bar_contact": "Kontakt"
+  "nav_bar_contact": "Kontakt",
+  "timeout_title": "Błąd połączenia z serwerem",
+  "confirmation_done_title": "Wysłałaś/eś już potwierdzenie.",
+  "confirmation_done_text": "Jeżeli coś się zmieniło i chcesz wprowadzić zmiany skontaktuj się z nami. Wszystkie informacje kontaktowe znajdziesz w zakładce \"Kontakt\""
 }

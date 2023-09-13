@@ -28,7 +28,9 @@ class InfoPage extends BasePage {
     final state = useCubitBuilder(cubit, buildWhen: _buildWhen);
 
     return state.maybeWhen(
-      loaded: () => InfoLoadedWidget(),
+      loaded: () => InfoLoadedWidget(
+        cubit: cubit,
+      ),
       orElse: () => Container(),
     );
   }

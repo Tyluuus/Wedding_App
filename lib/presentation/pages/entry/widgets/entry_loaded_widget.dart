@@ -57,7 +57,7 @@ class EntryLoadedWidget extends HookWidget {
                 quarterTurns: 3,
                 child: Text(
                   AppLocalizations.of(context)!.bride_name,
-                  style: Theme.of(context).primaryTextTheme.bodyLarge!.copyWith(
+                  style: Theme.of(context).primaryTextTheme.titleSmall!.copyWith(
                         color: Colors.black45,
                         fontWeight: FontWeight.w700,
                       ),
@@ -74,7 +74,7 @@ class EntryLoadedWidget extends HookWidget {
                 quarterTurns: 1,
                 child: Text(
                   AppLocalizations.of(context)!.groom_name,
-                  style: Theme.of(context).primaryTextTheme.bodyLarge!.copyWith(
+                  style: Theme.of(context).primaryTextTheme.titleSmall!.copyWith(
                         color: Colors.black45,
                         fontWeight: FontWeight.w700,
                       ),
@@ -109,26 +109,8 @@ class EntryLoadedWidget extends HookWidget {
                   ),
                   Padding(
                     padding: kDefaultColumnTopPadding,
-                    child: InkWell(
-                      onTap: () async {
-                        await cubit.navigateToNextPage();
-                      },
-                      highlightColor: Theme.of(context).highlightColor,
-                      child: Container(
-                        height: kReviewerIconSize,
-                        width: kReviewerIconSize,
-                        decoration: BoxDecoration(
-                          color: Theme.of(context).highlightColor,
-                          borderRadius: const BorderRadius.all(
-                            Radius.circular(kDefaultEntryPageButtonBorderRadiusValue),
-                          ),
-                        ),
-                        child: const Icon(
-                          Icons.arrow_forward_outlined,
-                          size: kDefaultIconSize,
-                          color: Colors.white,
-                        ),
-                      ),
+                    child: CircularProgressIndicator(
+                      color: Theme.of(context).highlightColor,
                     ),
                   ),
                 ],
