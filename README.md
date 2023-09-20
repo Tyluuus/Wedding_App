@@ -36,6 +36,11 @@ As this application is created for mobile devices it contains solutions typical 
 * Bloc
 * Rxdart
 
+## Solutions worth mentioning
+
+* Flutter localization
+* GetIt for Dependency Injection
+
 ## Future development
 
 There is plan to add handling push notifications when new information are added.
