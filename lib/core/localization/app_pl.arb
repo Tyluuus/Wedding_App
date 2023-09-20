@@ -47,5 +47,12 @@
   "confirmation_sms_footer": "Pozdrawiam, ",
   "confirmation_email_subject": "Potwierdzenie obecności",
   "contact_number": "+48222222222",
-  "contact_email": "tylus97@gmail.com"
+  "contact_email": "mail@gmail.com",
+  "confirmation_dialog_title": "Wybierz formę wysłania potwierdzenia.",
+  "confirmation_dialog_info": "Hej, wybierz czy potwierdzenie ma zostać wysłane z pomocą wiadomości SMS, bądź email",
+  "confirmation_dialog_cancel": "Anuluj",
+  "confirmation_dialog_first_option": "SMS",
+  "confirmation_dialog_second_option": "E-mail",
+  "confirmation_alert_dialog_title": "Bład",
+  "confirmation_alert_dialog_info": "Musisz podać przynajmniej imie i nazwisko aby potwierdzić obecność."
 }

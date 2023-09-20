@@ -47,5 +47,12 @@
   "confirmation_sms_footer": "Best Regards, ",
   "confirmation_email_subject": "Attendance confirmation",
   "contact_number": "+48222222222",
-  "contact_email": "tylus97@gmail.com"
+  "contact_email": "mail@gmail.com",
+  "confirmation_dialog_title": "Choose how you want to send confirmation.",
+  "confirmation_dialog_info": "Hi, choose if confirmation should be sent with SMS or email.",
+  "confirmation_dialog_cancel": "Cancel",
+  "confirmation_dialog_first_option": "SMS",
+  "confirmation_dialog_second_option": "E-mail",
+  "confirmation_alert_dialog_title": "Error",
+  "confirmation_alert_dialog_info": "You have to fill name and surname field at least to confirm presence."
 }

@@ -28,6 +28,10 @@ class ConfirmationCubit extends BaseCubit<ConfirmationState> {
   }
 
   Future<void> clickSend(String userName, bool withPartner, String? partnerName, String? additionalInfo, String? contactNumber) async {
+    if (userName.isEmpty) {
+      emit(ConfirmationState.error());
+      return;
+    }
     emit(ConfirmationState.sendConfirmation(
       userName,
       withPartner,
