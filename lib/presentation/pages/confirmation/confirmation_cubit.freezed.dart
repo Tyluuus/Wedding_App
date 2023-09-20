@@ -20,6 +20,9 @@ mixin _$ConfirmationState {
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
     required TResult Function() dump,
+    required TResult Function(String userName, bool withPartner,
+            String? partnerName, String? additionalInfo, String? contactNumber)
+        sendConfirmation,
     required TResult Function() loaded,
   }) =>
       throw _privateConstructorUsedError;
@@ -27,6 +30,9 @@ mixin _$ConfirmationState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
     TResult? Function()? dump,
+    TResult? Function(String userName, bool withPartner, String? partnerName,
+            String? additionalInfo, String? contactNumber)?
+        sendConfirmation,
     TResult? Function()? loaded,
   }) =>
       throw _privateConstructorUsedError;
@@ -34,6 +40,9 @@ mixin _$ConfirmationState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
     TResult Function()? dump,
+    TResult Function(String userName, bool withPartner, String? partnerName,
+            String? additionalInfo, String? contactNumber)?
+        sendConfirmation,
     TResult Function()? loaded,
     required TResult orElse(),
   }) =>
@@ -42,6 +51,8 @@ mixin _$ConfirmationState {
   TResult map<TResult extends Object?>({
     required TResult Function(ConfirmationStateIdle value) idle,
     required TResult Function(ConfirmationStateDump value) dump,
+    required TResult Function(ConfirmationStateSendConfirmation value)
+        sendConfirmation,
     required TResult Function(ConfirmationStateLoaded value) loaded,
   }) =>
       throw _privateConstructorUsedError;
@@ -49,6 +60,8 @@ mixin _$ConfirmationState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ConfirmationStateIdle value)? idle,
     TResult? Function(ConfirmationStateDump value)? dump,
+    TResult? Function(ConfirmationStateSendConfirmation value)?
+        sendConfirmation,
     TResult? Function(ConfirmationStateLoaded value)? loaded,
   }) =>
       throw _privateConstructorUsedError;
@@ -56,6 +69,7 @@ mixin _$ConfirmationState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ConfirmationStateIdle value)? idle,
     TResult Function(ConfirmationStateDump value)? dump,
+    TResult Function(ConfirmationStateSendConfirmation value)? sendConfirmation,
     TResult Function(ConfirmationStateLoaded value)? loaded,
     required TResult orElse(),
   }) =>
@@ -120,6 +134,9 @@ class _$ConfirmationStateIdle implements ConfirmationStateIdle {
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
     required TResult Function() dump,
+    required TResult Function(String userName, bool withPartner,
+            String? partnerName, String? additionalInfo, String? contactNumber)
+        sendConfirmation,
     required TResult Function() loaded,
   }) {
     return idle();
@@ -130,6 +147,9 @@ class _$ConfirmationStateIdle implements ConfirmationStateIdle {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
     TResult? Function()? dump,
+    TResult? Function(String userName, bool withPartner, String? partnerName,
+            String? additionalInfo, String? contactNumber)?
+        sendConfirmation,
     TResult? Function()? loaded,
   }) {
     return idle?.call();
@@ -140,6 +160,9 @@ class _$ConfirmationStateIdle implements ConfirmationStateIdle {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
     TResult Function()? dump,
+    TResult Function(String userName, bool withPartner, String? partnerName,
+            String? additionalInfo, String? contactNumber)?
+        sendConfirmation,
     TResult Function()? loaded,
     required TResult orElse(),
   }) {
@@ -154,6 +177,8 @@ class _$ConfirmationStateIdle implements ConfirmationStateIdle {
   TResult map<TResult extends Object?>({
     required TResult Function(ConfirmationStateIdle value) idle,
     required TResult Function(ConfirmationStateDump value) dump,
+    required TResult Function(ConfirmationStateSendConfirmation value)
+        sendConfirmation,
     required TResult Function(ConfirmationStateLoaded value) loaded,
   }) {
     return idle(this);
@@ -164,6 +189,8 @@ class _$ConfirmationStateIdle implements ConfirmationStateIdle {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ConfirmationStateIdle value)? idle,
     TResult? Function(ConfirmationStateDump value)? dump,
+    TResult? Function(ConfirmationStateSendConfirmation value)?
+        sendConfirmation,
     TResult? Function(ConfirmationStateLoaded value)? loaded,
   }) {
     return idle?.call(this);
@@ -174,6 +201,7 @@ class _$ConfirmationStateIdle implements ConfirmationStateIdle {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ConfirmationStateIdle value)? idle,
     TResult Function(ConfirmationStateDump value)? dump,
+    TResult Function(ConfirmationStateSendConfirmation value)? sendConfirmation,
     TResult Function(ConfirmationStateLoaded value)? loaded,
     required TResult orElse(),
   }) {
@@ -228,6 +256,9 @@ class _$ConfirmationStateDump implements ConfirmationStateDump {
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
     required TResult Function() dump,
+    required TResult Function(String userName, bool withPartner,
+            String? partnerName, String? additionalInfo, String? contactNumber)
+        sendConfirmation,
     required TResult Function() loaded,
   }) {
     return dump();
@@ -238,6 +269,9 @@ class _$ConfirmationStateDump implements ConfirmationStateDump {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
     TResult? Function()? dump,
+    TResult? Function(String userName, bool withPartner, String? partnerName,
+            String? additionalInfo, String? contactNumber)?
+        sendConfirmation,
     TResult? Function()? loaded,
   }) {
     return dump?.call();
@@ -248,6 +282,9 @@ class _$ConfirmationStateDump implements ConfirmationStateDump {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
     TResult Function()? dump,
+    TResult Function(String userName, bool withPartner, String? partnerName,
+            String? additionalInfo, String? contactNumber)?
+        sendConfirmation,
     TResult Function()? loaded,
     required TResult orElse(),
   }) {
@@ -262,6 +299,8 @@ class _$ConfirmationStateDump implements ConfirmationStateDump {
   TResult map<TResult extends Object?>({
     required TResult Function(ConfirmationStateIdle value) idle,
     required TResult Function(ConfirmationStateDump value) dump,
+    required TResult Function(ConfirmationStateSendConfirmation value)
+        sendConfirmation,
     required TResult Function(ConfirmationStateLoaded value) loaded,
   }) {
     return dump(this);
@@ -272,6 +311,8 @@ class _$ConfirmationStateDump implements ConfirmationStateDump {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ConfirmationStateIdle value)? idle,
     TResult? Function(ConfirmationStateDump value)? dump,
+    TResult? Function(ConfirmationStateSendConfirmation value)?
+        sendConfirmation,
     TResult? Function(ConfirmationStateLoaded value)? loaded,
   }) {
     return dump?.call(this);
@@ -282,6 +323,7 @@ class _$ConfirmationStateDump implements ConfirmationStateDump {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ConfirmationStateIdle value)? idle,
     TResult Function(ConfirmationStateDump value)? dump,
+    TResult Function(ConfirmationStateSendConfirmation value)? sendConfirmation,
     TResult Function(ConfirmationStateLoaded value)? loaded,
     required TResult orElse(),
   }) {
@@ -294,6 +336,222 @@ class _$ConfirmationStateDump implements ConfirmationStateDump {
 
 abstract class ConfirmationStateDump implements ConfirmationState {
   const factory ConfirmationStateDump() = _$ConfirmationStateDump;
+}
+
+/// @nodoc
+abstract class _$$ConfirmationStateSendConfirmationCopyWith<$Res> {
+  factory _$$ConfirmationStateSendConfirmationCopyWith(
+          _$ConfirmationStateSendConfirmation value,
+          $Res Function(_$ConfirmationStateSendConfirmation) then) =
+      __$$ConfirmationStateSendConfirmationCopyWithImpl<$Res>;
+  @useResult
+  $Res call(
+      {String userName,
+      bool withPartner,
+      String? partnerName,
+      String? additionalInfo,
+      String? contactNumber});
+}
+
+/// @nodoc
+class __$$ConfirmationStateSendConfirmationCopyWithImpl<$Res>
+    extends _$ConfirmationStateCopyWithImpl<$Res,
+        _$ConfirmationStateSendConfirmation>
+    implements _$$ConfirmationStateSendConfirmationCopyWith<$Res> {
+  __$$ConfirmationStateSendConfirmationCopyWithImpl(
+      _$ConfirmationStateSendConfirmation _value,
+      $Res Function(_$ConfirmationStateSendConfirmation) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? userName = null,
+    Object? withPartner = null,
+    Object? partnerName = freezed,
+    Object? additionalInfo = freezed,
+    Object? contactNumber = freezed,
+  }) {
+    return _then(_$ConfirmationStateSendConfirmation(
+      null == userName
+          ? _value.userName
+          : userName // ignore: cast_nullable_to_non_nullable
+              as String,
+      null == withPartner
+          ? _value.withPartner
+          : withPartner // ignore: cast_nullable_to_non_nullable
+              as bool,
+      freezed == partnerName
+          ? _value.partnerName
+          : partnerName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      freezed == additionalInfo
+          ? _value.additionalInfo
+          : additionalInfo // ignore: cast_nullable_to_non_nullable
+              as String?,
+      freezed == contactNumber
+          ? _value.contactNumber
+          : contactNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ConfirmationStateSendConfirmation
+    implements ConfirmationStateSendConfirmation {
+  const _$ConfirmationStateSendConfirmation(this.userName, this.withPartner,
+      this.partnerName, this.additionalInfo, this.contactNumber);
+
+  @override
+  final String userName;
+  @override
+  final bool withPartner;
+  @override
+  final String? partnerName;
+  @override
+  final String? additionalInfo;
+  @override
+  final String? contactNumber;
+
+  @override
+  String toString() {
+    return 'ConfirmationState.sendConfirmation(userName: $userName, withPartner: $withPartner, partnerName: $partnerName, additionalInfo: $additionalInfo, contactNumber: $contactNumber)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ConfirmationStateSendConfirmation &&
+            (identical(other.userName, userName) ||
+                other.userName == userName) &&
+            (identical(other.withPartner, withPartner) ||
+                other.withPartner == withPartner) &&
+            (identical(other.partnerName, partnerName) ||
+                other.partnerName == partnerName) &&
+            (identical(other.additionalInfo, additionalInfo) ||
+                other.additionalInfo == additionalInfo) &&
+            (identical(other.contactNumber, contactNumber) ||
+                other.contactNumber == contactNumber));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, userName, withPartner,
+      partnerName, additionalInfo, contactNumber);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ConfirmationStateSendConfirmationCopyWith<
+          _$ConfirmationStateSendConfirmation>
+      get copyWith => __$$ConfirmationStateSendConfirmationCopyWithImpl<
+          _$ConfirmationStateSendConfirmation>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() dump,
+    required TResult Function(String userName, bool withPartner,
+            String? partnerName, String? additionalInfo, String? contactNumber)
+        sendConfirmation,
+    required TResult Function() loaded,
+  }) {
+    return sendConfirmation(
+        userName, withPartner, partnerName, additionalInfo, contactNumber);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? dump,
+    TResult? Function(String userName, bool withPartner, String? partnerName,
+            String? additionalInfo, String? contactNumber)?
+        sendConfirmation,
+    TResult? Function()? loaded,
+  }) {
+    return sendConfirmation?.call(
+        userName, withPartner, partnerName, additionalInfo, contactNumber);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? dump,
+    TResult Function(String userName, bool withPartner, String? partnerName,
+            String? additionalInfo, String? contactNumber)?
+        sendConfirmation,
+    TResult Function()? loaded,
+    required TResult orElse(),
+  }) {
+    if (sendConfirmation != null) {
+      return sendConfirmation(
+          userName, withPartner, partnerName, additionalInfo, contactNumber);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ConfirmationStateIdle value) idle,
+    required TResult Function(ConfirmationStateDump value) dump,
+    required TResult Function(ConfirmationStateSendConfirmation value)
+        sendConfirmation,
+    required TResult Function(ConfirmationStateLoaded value) loaded,
+  }) {
+    return sendConfirmation(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ConfirmationStateIdle value)? idle,
+    TResult? Function(ConfirmationStateDump value)? dump,
+    TResult? Function(ConfirmationStateSendConfirmation value)?
+        sendConfirmation,
+    TResult? Function(ConfirmationStateLoaded value)? loaded,
+  }) {
+    return sendConfirmation?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ConfirmationStateIdle value)? idle,
+    TResult Function(ConfirmationStateDump value)? dump,
+    TResult Function(ConfirmationStateSendConfirmation value)? sendConfirmation,
+    TResult Function(ConfirmationStateLoaded value)? loaded,
+    required TResult orElse(),
+  }) {
+    if (sendConfirmation != null) {
+      return sendConfirmation(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ConfirmationStateSendConfirmation implements ConfirmationState {
+  const factory ConfirmationStateSendConfirmation(
+      final String userName,
+      final bool withPartner,
+      final String? partnerName,
+      final String? additionalInfo,
+      final String? contactNumber) = _$ConfirmationStateSendConfirmation;
+
+  String get userName;
+  bool get withPartner;
+  String? get partnerName;
+  String? get additionalInfo;
+  String? get contactNumber;
+  @JsonKey(ignore: true)
+  _$$ConfirmationStateSendConfirmationCopyWith<
+          _$ConfirmationStateSendConfirmation>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -337,6 +595,9 @@ class _$ConfirmationStateLoaded implements ConfirmationStateLoaded {
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
     required TResult Function() dump,
+    required TResult Function(String userName, bool withPartner,
+            String? partnerName, String? additionalInfo, String? contactNumber)
+        sendConfirmation,
     required TResult Function() loaded,
   }) {
     return loaded();
@@ -347,6 +608,9 @@ class _$ConfirmationStateLoaded implements ConfirmationStateLoaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
     TResult? Function()? dump,
+    TResult? Function(String userName, bool withPartner, String? partnerName,
+            String? additionalInfo, String? contactNumber)?
+        sendConfirmation,
     TResult? Function()? loaded,
   }) {
     return loaded?.call();
@@ -357,6 +621,9 @@ class _$ConfirmationStateLoaded implements ConfirmationStateLoaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
     TResult Function()? dump,
+    TResult Function(String userName, bool withPartner, String? partnerName,
+            String? additionalInfo, String? contactNumber)?
+        sendConfirmation,
     TResult Function()? loaded,
     required TResult orElse(),
   }) {
@@ -371,6 +638,8 @@ class _$ConfirmationStateLoaded implements ConfirmationStateLoaded {
   TResult map<TResult extends Object?>({
     required TResult Function(ConfirmationStateIdle value) idle,
     required TResult Function(ConfirmationStateDump value) dump,
+    required TResult Function(ConfirmationStateSendConfirmation value)
+        sendConfirmation,
     required TResult Function(ConfirmationStateLoaded value) loaded,
   }) {
     return loaded(this);
@@ -381,6 +650,8 @@ class _$ConfirmationStateLoaded implements ConfirmationStateLoaded {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ConfirmationStateIdle value)? idle,
     TResult? Function(ConfirmationStateDump value)? dump,
+    TResult? Function(ConfirmationStateSendConfirmation value)?
+        sendConfirmation,
     TResult? Function(ConfirmationStateLoaded value)? loaded,
   }) {
     return loaded?.call(this);
@@ -391,6 +662,7 @@ class _$ConfirmationStateLoaded implements ConfirmationStateLoaded {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ConfirmationStateIdle value)? idle,
     TResult Function(ConfirmationStateDump value)? dump,
+    TResult Function(ConfirmationStateSendConfirmation value)? sendConfirmation,
     TResult Function(ConfirmationStateLoaded value)? loaded,
     required TResult orElse(),
   }) {

@@ -22,8 +22,11 @@
   "name_text_field_label": "Name and Surname",
   "accompanying_person_text": "Will you come with an accompanying person?",
   "accompanying_person_text_field_title": "Name and Surname of an accompanying person.",
-  "i_dont_know_label": "I don't know yet if I'll come with anyone",
+  "i_dont_know_label": "I don't know yet with who I will come",
   "contact_number_label": "Contact number",
+  "contact_number_label_exp": "We may need to contact with you to confirm some details regarding you. Please write number under which we can contact with you.",
+  "confirmation_additional_info": "Additional informations",
+  "confirmation_additional_info_exp": "If you would like to pass to us information about your food preferences, or other that can be valuable please write them below.",
   "send_button_label": "Send",
   "information_page_label": "Informations",
   "information_page_info": "Here will be appearing all organizational informations connected with upcoming ceremony. Please remember to check this page regularly.",
@@ -35,5 +38,14 @@
   "nav_bar_contact": "Contact",
   "timeout_title": "Server communication error",
   "confirmation_done_title": "You have already sent confirmation.",
-  "confirmation_done_text": "If anything changed please contact with us. All contact informations you will find under contact tab."
+  "confirmation_done_text": "If anything changed please contact with us. All contact informations you will find under contact tab.",
+  "confirmation_sms_header": "Hi, I'd like to confirm attendance on your weeding.",
+  "confirmation_sms_body_with_partner": "I will be with accompanying person: ",
+  "confirmation_sms_body_without_partner": "I will be without accompanying person.",
+  "confirmation_sms_additional_info": "Additional info: ",
+  "confirmation_sms_responder_contact": "My contact number: ",
+  "confirmation_sms_footer": "Best Regards, ",
+  "confirmation_email_subject": "Attendance confirmation",
+  "contact_number": "+48222222222",
+  "contact_email": "tylus97@gmail.com"
 }

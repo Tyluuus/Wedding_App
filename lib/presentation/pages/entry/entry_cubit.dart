@@ -9,7 +9,7 @@ class EntryCubit extends BaseCubit<EntryState> {
 
   Future<void> init() async {
     emit(const EntryState.loaded());
-    Future.delayed(const Duration(seconds: 5)).then((value) => navigateToNextPage());
+    Future.delayed(const Duration(seconds: 2)).then((value) => navigateToNextPage());
   }
 
   Future<void> navigateToNextPage() async {

@@ -44,6 +44,7 @@ const kDefaultMinimalButtonSize = Size.fromHeight(44.0);
 //
 // // Default border radius
 const kDefaultBorderRadiusValue = 20.0;
+const kDefaultDialogRadiusValue = 16.0;
 const kDefaultEntryPageButtonBorderRadiusValue = 10.0;
 const kDefaultImageBorderRadiusValue = 30.0;
 const kDefaultButtonBorderRadiusValue = 8.0;

@@ -4,6 +4,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:wedding_app/core/hooks/cubit_hook.dart';
 import 'package:wedding_app/presentation/pages/base_page.dart';
 import 'package:wedding_app/presentation/pages/confirmation/widgets/confirmation_loaded_widget.dart';
+import 'package:wedding_app/presentation/widgets/double_choice_dialog_widget.dart';
 
 import 'confirmation_cubit.dart';
 
@@ -41,6 +42,25 @@ class ConfirmationPage extends BasePage {
 
   void _cubitStateListener(ConfirmationCubit cubit, ConfirmationState state, BuildContext context) {
     state.maybeWhen(
+      sendConfirmation: ((userName, withPartner, partnerName, additionalInfo, contactNumber) => showDialog(
+            context: context,
+            builder: (BuildContext context) => const DoubleChoiceDialogWidget(
+              title: "Wybierz formę wysłania potwierdzenia.",
+              info: "Hej, wybierz czy potwierdzenie ma zostać wysłanę z pomocą wiadomości SMS, bądź e-mail",
+              cancel: "Anuluj",
+              firstOption: "SMS",
+              secondOption: "E-mail",
+            ),
+          ).then(
+            (value) async => value == null
+                ? null
+                : value == DialogAction.cancel
+                    ? await cubit.refreshPage()
+                    : {
+                        await cubit.confirmAttend(value == DialogAction.firstOption ? ConfirmationChannel.sms : ConfirmationChannel.email, context, userName,
+                            withPartner, partnerName, additionalInfo, contactNumber),
+                      },
+          )),
       orElse: () {},
     );
   }

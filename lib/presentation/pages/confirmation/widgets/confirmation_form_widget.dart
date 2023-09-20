@@ -5,15 +5,33 @@ import 'package:wedding_app/presentation/styles/dimensions.dart';
 import 'package:wedding_app/presentation/widgets/base_text_field.dart';
 
 class ConfirmationFormWidget extends HookWidget {
+  final TextEditingController nameTextController;
+
+  final TextEditingController partnerNameTextController;
+  final TextEditingController numberTextController;
+  final TextEditingController additionalInfoTextController;
+
+  final ValueNotifier<bool> withPartner;
+  final ValueNotifier<bool> isPartnerUnknown;
+
   const ConfirmationFormWidget({
     Key? key,
+    required this.nameTextController,
+    required this.partnerNameTextController,
+    required this.numberTextController,
+    required this.additionalInfoTextController,
+    required this.withPartner,
+    required this.isPartnerUnknown,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final nameTextController = TextEditingController();
-    final withPartner = useState(false);
-    final isPartnerUnknown = useState(false);
+    // final withPartner = useState(false);
+    // final isPartnerUnknown = useState(false);
+    // // final nameTextController = useTextEditingController();
+    // final partnerNameTextController = useTextEditingController();
+    // final contactNumberTextController = useTextEditingController();
+    // final additionalInfoTextController = useTextEditingController();
 
     return SingleChildScrollView(
       child: Column(
@@ -62,7 +80,7 @@ class ConfirmationFormWidget extends HookWidget {
               ? Padding(
                   padding: kDefaultTextFieldPadding,
                   child: BaseTextField(
-                    textEditingController: nameTextController,
+                    textEditingController: partnerNameTextController,
                     label: AppLocalizations.of(context)!.accompanying_person_text_field_title,
                   ),
                 )
@@ -92,11 +110,34 @@ class ConfirmationFormWidget extends HookWidget {
                 )
               : Container(),
           Padding(
-            padding: kPageSidePadding,
+            padding: kDefaultAllSidesNotEqualPadding,
+            child: Text(
+              AppLocalizations.of(context)!.contact_number_label_exp,
+              style: Theme.of(context).primaryTextTheme.bodyMedium,
+              textAlign: TextAlign.center,
+            ),
+          ),
+          Padding(
+            padding: kDefaultTextFieldPadding,
             child: BaseTextField(
-              textEditingController: nameTextController,
+              textEditingController: numberTextController,
               label: AppLocalizations.of(context)!.contact_number_label,
               phone: true,
+            ),
+          ),
+          Padding(
+            padding: kDefaultAllSidesNotEqualPadding,
+            child: Text(
+              AppLocalizations.of(context)!.confirmation_additional_info_exp,
+              style: Theme.of(context).primaryTextTheme.bodyMedium,
+              textAlign: TextAlign.center,
+            ),
+          ),
+          Padding(
+            padding: kDefaultTextFieldPadding,
+            child: BaseTextField(
+              textEditingController: additionalInfoTextController,
+              label: AppLocalizations.of(context)!.confirmation_additional_info,
             ),
           ),
         ],

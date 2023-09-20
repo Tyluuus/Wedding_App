@@ -26,6 +26,13 @@ class ConfirmationLoadedWidget extends HookWidget {
       isLoading.value = false;
     }
 
+    final nameTextController = useTextEditingController();
+    final partnerNameTextController = useTextEditingController();
+    final contactNumberTextController = useTextEditingController();
+    final additionalInfoTextController = useTextEditingController();
+    final withPartner = useState(false);
+    final isPartnerUnknown = useState(false);
+
     return KeyboardVisibilityBuilder(builder: (context, isKeyboardVisible) {
       return Scaffold(
         backgroundColor: Theme.of(context).primaryColor,
@@ -70,7 +77,14 @@ class ConfirmationLoadedWidget extends HookWidget {
                                   padding: kDefaultDividerPadding,
                                   child: DividerWidget(),
                                 ),
-                                const ConfirmationFormWidget(),
+                                ConfirmationFormWidget(
+                                  nameTextController: nameTextController,
+                                  partnerNameTextController: partnerNameTextController,
+                                  numberTextController: contactNumberTextController,
+                                  additionalInfoTextController: additionalInfoTextController,
+                                  withPartner: withPartner,
+                                  isPartnerUnknown: isPartnerUnknown,
+                                ),
                                 !isKeyboardVisible
                                     ? Padding(
                                         padding: kDefaultAllSidesEqualPadding,
@@ -84,7 +98,13 @@ class ConfirmationLoadedWidget extends HookWidget {
                                             elevation: 0,
                                           ),
                                           onPressed: () async {
-                                            await cubit.confirmAttend();
+                                            await cubit.clickSend(
+                                              nameTextController.text,
+                                              withPartner.value,
+                                              partnerNameTextController.text,
+                                              additionalInfoTextController.text,
+                                              contactNumberTextController.text,
+                                            );
                                           },
                                           child: Text(AppLocalizations.of(context)!.send_button_label),
                                         ),
@@ -106,7 +126,15 @@ class ConfirmationLoadedWidget extends HookWidget {
                                     minimumSize: kDefaultMinimalButtonSize,
                                     elevation: 0,
                                   ),
-                                  onPressed: () {},
+                                  onPressed: () async {
+                                    await cubit.clickSend(
+                                      nameTextController.text,
+                                      withPartner.value,
+                                      partnerNameTextController.text,
+                                      additionalInfoTextController.text,
+                                      contactNumberTextController.text,
+                                    );
+                                  },
                                   child: Text(
                                     AppLocalizations.of(context)!.send_button_label,
                                   ),

@@ -9,4 +9,6 @@ class SecureStorageRepository {
   Future<void> setAsConfirmed() async {
     await secureStorage.write(key: _confirmationKey, value: "true");
   }
+
+  Future<void> deleteConfirmed() async => await secureStorage.delete(key: _confirmationKey);
 }
