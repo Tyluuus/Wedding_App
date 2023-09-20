@@ -57,6 +57,7 @@ class ConfirmationFormWidget extends HookWidget {
           Padding(
             padding: kDefaultCheckboxQuestionPadding,
             child: Row(
+              mainAxisSize: MainAxisSize.max,
               children: [
                 Align(
                   alignment: Alignment.centerLeft,
@@ -87,7 +88,7 @@ class ConfirmationFormWidget extends HookWidget {
               : Container(),
           withPartner.value
               ? Padding(
-                  padding: kDefaultTextFieldPadding,
+                  padding: kDefaultCheckboxQuestionPadding,
                   child: Row(
                     children: [
                       Align(

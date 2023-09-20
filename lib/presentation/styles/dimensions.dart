@@ -23,7 +23,7 @@ const kDefaultAllSidesNotEqualPaddingReverse = EdgeInsets.fromLTRB(16, 24, 16, 2
 const kDefaultLTRPadding = EdgeInsets.fromLTRB(24.0, 0.0, 24.0, 8.0);
 const kDefaultTextFieldPadding = EdgeInsets.fromLTRB(24.0, 8.0, 24.0, 8.0);
 
-const kDefaultCheckboxQuestionPadding = EdgeInsets.symmetric(horizontal: 24.0, vertical: 8.0);
+const kDefaultCheckboxQuestionPadding = EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0);
 
 const kDefaultSizedBoxPaddingValue = 4.0;
 const kPageSidePaddingValue = 24.0;
