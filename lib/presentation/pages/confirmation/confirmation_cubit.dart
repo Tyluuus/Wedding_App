@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -29,7 +31,7 @@ class ConfirmationCubit extends BaseCubit<ConfirmationState> {
 
   Future<void> clickSend(String userName, bool withPartner, String? partnerName, String? additionalInfo, String? contactNumber) async {
     if (userName.isEmpty) {
-      emit(ConfirmationState.error());
+      emit(const ConfirmationState.error());
       return;
     }
     emit(ConfirmationState.sendConfirmation(
@@ -52,7 +54,8 @@ class ConfirmationCubit extends BaseCubit<ConfirmationState> {
     final messageBody = _generateMessageBody(context, userName, withPartner, partnerName, additionalInfo, contactNumber);
     if (channel == ConfirmationChannel.sms) {
       final contactNumber = AppLocalizations.of(context)!.contact_number.convertContactNumber();
-      url = Uri.parse('sms:$contactNumber&body=$messageBody');
+      final connector = Platform.isAndroid ? "?" : "&";
+      url = Uri.parse('sms:$contactNumber${connector}body=$messageBody');
     }
 
     if (channel == ConfirmationChannel.email) {
